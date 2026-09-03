@@ -2,7 +2,7 @@ import { GraphiQL } from 'graphiql';
 import 'graphiql/style.css';
 
 async function fetcher(graphQLParams) {
-  const response = await fetch('https://graphql.earthdata.nasa.gov/api', {
+  const response = await fetch('/graphql', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -13,8 +13,15 @@ async function fetcher(graphQLParams) {
   return response.json();
 }
 
+const query = /* GraphQL */`
+  { 
+    # look ma, no selection set!
+    pageLayout(page: "foo")
+  }
+`.trim();
+
 function App() {
-  return <GraphiQL fetcher={fetcher} />;
+  return <GraphiQL fetcher={fetcher} defaultQuery={query} initialQuery={query} />;
 }
 
 export default App;

@@ -3,19 +3,24 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "add": "^2.0.9",
+    "express": "^5.2.1",
     "graphiql": "^5.4.0",
-    "graphql": "file:../../2026-09-02/graphql-js-4-NKTz/npmDist/graphql-17.0.2.tgz",
+    "graphql": "https://github.com/magicmark/graphql-js/raw/struct/graphql-17.0.2.tgz",
+    "graphql-http": "^1.23.0",
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "vite-express": "^0.22.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4",
-    "vite": "^6",
-    "vite-plugin-monaco-editor": "^1"
+    "concurrently": "^10.0.5",
+    "nodemon": "^3.1.14",
+    "vite": "^6"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "node server.mjs",
     "build": "vite build",
-    "start": "vite preview"
+    "start": "NODE_ENV=production node server.mjs"
   }
 }
