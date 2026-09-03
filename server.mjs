@@ -77,7 +77,7 @@ const app = express().all(
     }),
 );
 
-const server = ViteExpress.listen(app, 4000, () => {
+const server = ViteExpress.listen(app, 8080, () => {
     const address = server.address();
     const host = address.address === '::' ? 'localhost' : address.address;
     const port = address.port;
